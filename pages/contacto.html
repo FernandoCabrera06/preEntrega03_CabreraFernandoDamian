@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="../assets/icons/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Gabarito&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="stylesheet" href="../css/style.css" />
+    <title>
+      Rocco Alimentos 🐕 | Contactanos directo a través de WhatsApp, seguinos en
+      nuestras redes o dejanos tu consulta por mail 🤗
+    </title>
+    <meta
+      name="description"
+      content="Contactanos directo a través de WhatsApp, seguinos en
+      nuestras redes o dejanos tu consulta por mail."
+    />
+    <script src="../js/models/Carrito.js" defer></script>
+    <script src="../js/pages/contacto.js" defer></script>
+    <script src="../js/carrito-navbar.js" defer></script>
+    <script src="../js/libraries/sweet-alert.js" defer></script>
+  </head>
+  <body>
+    <header class="header">
+      <nav class="navbar navbar-expand-lg border-bottom border-body">
+        <div class="container-fluid">
+          <div class="logo-sitio-container">
+            <a href="../index.html">
+              <img
+                src="../assets/images/logo.png"
+                id="logo-sitio"
+                alt="logo sitio"
+              />
+              <p>Rocco - Alimentos para mascotas</p>
+            </a>
+          </div>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <img
+              class="navbar-toggler-icon"
+              src="../assets/icons/menu-48.png"
+              alt="icono menu"
+            />
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav navbar-list">
+              <li><a class="navbar-item" href="../index.html">Inicio</a></li>
+              <li>
+                <a class="navbar-item" href="./catalogo.html">Catálogo</a>
+              </li>
+              <li>
+                <a class="navbar-item" href="./marcas.html">Marcas</a>
+              </li>
+              <li>
+                <a class="navbar-item" href="#">Contacto</a>
+              </li>
+            </ul>
+            <div id="carrito">
+              <a class="navbar-item" href="./carrito.html"
+                ><span id="contadorCarrito" class="badge text-bg-danger"></span
+                >Carrito 🛒</a
+              >
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <!----------------- Horarios de atención y mapa ------------------------>
+      <section>
+        <h1 class="titulo-principal animate__animated animate__slideInDown">
+          Contáctanos
+        </h1>
+        <div class="mapa-horarios-container">
+          <div class="horarios">
+            <h2>ATENCIÓN A CLIENTES</h2>
+            <h3>Horario de atención:</h3>
+            <h3>Lunes a domingo de 7:00hs a 0:00hs</h3>
+            <h3>
+              <img src="../assets/images/whatsapp.png" alt="whatsapp" />+54 9
+              5334 0988
+            </h3>
+          </div>
+          <div class="mapa">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d26742.35052180008!2d-68.4531207191957!3d-33.08820862579963!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2sar!4v1696633213192!5m2!1ses-419!2sar"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+        </div>
+      </section>
+      <!-----------------FIN Horarios de atención y mapa ------------------------>
+
+      <!--------------------- Formulario de consultas --------------------------->
+      <section>
+        <!------------MODAL-------------->
+        <!-- Button trigger modal -->
+        <div class="modal-email-container">
+          <a
+            class="modal-email"
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal"
+            ><h2>Dejanos tu consulta y te constestamos por e-mail</h2>
+            <br /><img src="../assets/icons/correo-96.png" alt="correo"
+          /></a>
+
+          <!-- Form Modal -->
+          <div
+            class="modal fade"
+            id="exampleModal"
+            tabindex="-1"
+            aria-labelledby="exampleModalLabel"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">
+                    Dejanos tu consulta...
+                  </h5>
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <div class="modal-body">
+                  <div>
+                    <label for="">Nombre y Apellido</label>
+                    <input type="text" placeholder="Juan Perez" />
+                  </div>
+                  <br />
+                  <div>
+                    <label for="">Direccion de e-mail</label>
+                    <input type="email" placeholder="juan@gmail.com" />
+                  </div>
+                  <br />
+                  <textarea
+                    name=""
+                    id=""
+                    cols="26"
+                    rows="6"
+                    placeholder="Escribenos..."
+                  ></textarea>
+                </div>
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-bs-dismiss="modal"
+                  >
+                    Cancelar
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-primary"
+                    data-bs-dismiss="modal"
+                    onclick="swalEmail()"
+                  >
+                    Enviar mail
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!------------FIN MODAL-------->
+
+        <div class="formulario-container">
+          <form action="">
+            <h2>
+              Dejanos tu consulta y te constestamos por e-mail
+              <img src="../assets/icons/correo-48.png" alt="correo" />
+            </h2>
+            <br />
+            <div>
+              <label for="">Nombre y Apellido</label>
+              <input type="text" placeholder="Juan Perez" />
+            </div>
+            <br />
+            <div>
+              <label for="">Direccion de e-mail</label>
+              <input type="email" placeholder="juan@gmail.com" />
+            </div>
+            <br />
+            <textarea
+              name=""
+              id=""
+              cols="30"
+              rows="10"
+              placeholder="Escribenos..."
+            ></textarea>
+            <br />
+            <button type="button" onclick="swalEmail()">Enviar</button>
+          </form>
+        </div>
+      </section>
+      <!---------------------FIN Formulario de consultas --------------------------->
+    </main>
+
+    <footer>
+      <div class="footer-container">
+        <div class="socials-icon-container">
+          <a href="https://web.whatsapp.com/" target="_blank">
+            <img
+              class="socials-icon"
+              src="../assets/images/whatsapp.png"
+              alt="Logo Whatsapp"
+            />
+          </a>
+
+          <a href="https://www.facebook.com/" target="_blank">
+            <img
+              class="socials-icon"
+              src="../assets/images/facebook.png"
+              alt="Logo Facebook"
+            />
+          </a>
+
+          <a href="https://www.instagram.com/" target="_blank">
+            <img
+              class="socials-icon"
+              src="../assets/images/instagram.png"
+              alt="Logo Instagram"
+            />
+          </a>
+
+          <a href="https://twitter.com/" target="_blank">
+            <img
+              class="socials-icon"
+              src="../assets/images/xcorp.png"
+              alt="Logo X corp"
+            />
+          </a>
+        </div>
+        <p>Todos los derechos reservados - Alimentos Rocco ®</p>
+      </div>
+    </footer>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

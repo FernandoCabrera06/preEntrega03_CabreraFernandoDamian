@@ -1,0 +1,190 @@
+.container-encabezado {
+  display: flex;
+  align-items: baseline;
+  margin-top: -8rem;
+  justify-content: center;
+}
+.titulo-principal {
+  margin-top: -5rem;
+  margin-right: 6.5rem;
+}
+
+.productos-sugeridos {
+  text-align: center;
+  margin-top: 5rem;
+  h2 {
+    margin-bottom: 2rem;
+  }
+}
+.card-sugerida {
+  border: solid 1px $full_dark;
+  width: 15rem;
+  height: 20rem;
+  text-align: center;
+  display: inline-block;
+  margin: 1rem;
+  img {
+    width: 8rem;
+  }
+  p {
+    font-size: 1rem;
+  }
+  h2 {
+    font-size: 1.5rem;
+  }
+  a {
+    font-size: 1rem;
+    text-decoration: none;
+    padding: 0.5rem;
+    background-color: $background-color_1;
+    color: $full_light;
+    &:hover {
+      background-color: $background-color_2;
+    }
+  }
+}
+.card-compra-container {
+  display: grid;
+  margin-top: 2rem;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  justify-items: center;
+  grid-template-areas: "card-compra-a cuenta-total" "card-compra-b cuenta-total";
+}
+.card-compra {
+  .a {
+    grid-area: card-compra-a;
+  }
+  .b {
+    grid-area: card-compra-b;
+  }
+  border: solid 1px #000000;
+  width: 40rem;
+  height: 9rem;
+  margin: 0 2rem;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-around;
+  img {
+    width: 7rem;
+  }
+  p {
+    width: 120%;
+    font-size: 1.1rem;
+  }
+  h2 {
+    margin-left: 3rem;
+    font-size: 1.5rem;
+  }
+}
+.cuenta-total {
+  grid-area: cuenta-total;
+  border: solid 1px #000000;
+  width: 20rem;
+  height: 22rem;
+  text-align: center;
+  h1 {
+    margin: 1.2rem 0;
+    font-size: 1.4rem;
+  }
+  hr {
+    width: 15rem;
+    margin: 1.2rem 0 1rem 3.5rem;
+  }
+  p {
+    font-size: 1.2rem;
+  }
+  button {
+    margin: 0.5rem 1.5rem 0 2rem;
+    padding: 0.2rem;
+    background-color: $background-color_1;
+    color: $full_light;
+    font-size: 1rem;
+    &:hover {
+      background-color: $background-color_2;
+    }
+  }
+  h2 {
+    font-size: 1.5rem;
+  }
+}
+.card-compra-contador {
+  display: flex;
+  border: solid 3px $full_dark;
+  align-self: end;
+  button {
+    padding: 2px 6px;
+    font-size: 1rem;
+    font-weight: 800;
+    width: 1.6rem;
+    background-color: $background-color_1;
+    color: $full_light;
+    font-size: 1rem;
+    &:hover {
+      background-color: $background-color_2;
+    }
+  }
+  span {
+    padding: 2px 6px;
+    font-size: 1.2rem;
+  }
+}
+#btn-vaciar-carrito {
+  margin: 0.5rem 6.5rem 0 2rem;
+  padding: 0.2rem;
+  background-color: $background-color_1;
+  color: $full_light;
+  font-size: 1rem;
+  &:hover {
+    background-color: $background-color_2;
+  }
+}
+.card-compra-info {
+  display: flex;
+  p {
+    padding-left: 0.4rem;
+  }
+  h2 {
+    padding-left: 0.4rem;
+  }
+}
+@media (max-width: 991px) {
+  .card-compra-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.5fr 0.5fr 0.5fr;
+    grid-template-areas: "card-compra-a" "card-compra-b" " cuenta-total";
+    margin: 0;
+  }
+}
+@media (max-width: 768px) {
+  .card-compra {
+    margin: 1.5rem 0;
+    width: 22rem;
+    height: 20rem;
+    display: flex;
+    flex-direction: column;
+  }
+  .card-compra-info {
+    p {
+      padding-left: 0.8rem;
+      font-size: 1.2rem;
+    }
+    h2 {
+      padding-left: 0.8rem;
+      padding-left: 1.8rem;
+      font-weight: 600;
+    }
+  }
+  .card-compra-contador {
+    align-self: center;
+    button {
+      width: 2.2rem;
+      background-color: $background-color_1;
+      color: $full_light;
+      font-size: 1.2rem;
+      &:hover {
+        background-color: $background-color_2;
+      }
+    }
+  }
+}

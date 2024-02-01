@@ -1,0 +1,15 @@
+.error-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  h1 {
+    margin-top: 3rem;
+  }
+  h2 {
+    margin-top: 3rem;
+  }
+  img {
+    width: 50%;
+  }
+}

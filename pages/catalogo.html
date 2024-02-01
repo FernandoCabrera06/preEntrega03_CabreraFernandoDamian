@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="../assets/icons/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Gabarito&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+    <title>
+      Rocco Alimentos 🐕 | Contamos con un amplio catálogo de los más variados
+      productos para tu mascota consultalo y no dudes en contactarnos para más
+      información.
+    </title>
+    <meta
+      name="description"
+      content="Contamos con un amplio catálogo de los más variados productos para tu mascota consultalo y no dudes en contactarnos para más información"
+    />
+    <meta
+      name="keywords"
+      content="alimento mascotas perro gato pez tortuga ave raza"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+      defer
+    ></script>
+    <script
+      src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"
+      defer
+    ></script>
+    <script src="../js/libraries/sweet-alert.js" defer></script>
+    <script src="../js/data.js" defer></script>
+    <script src="../js/models/Carrito.js" defer></script>
+    <script src="../js/carrito-navbar.js" defer></script>
+    <script src="../js/pages/catalogo.js" defer></script>
+  </head>
+  <body>
+    <header class="header">
+      <nav class="navbar navbar-expand-lg border-bottom border-body">
+        <div class="container-fluid">
+          <div class="logo-sitio-container">
+            <a href="../index.html">
+              <img
+                src="../assets/images/logo.png"
+                id="logo-sitio"
+                alt="logo sitio"
+              />
+              <p>Rocco - Alimentos para mascotas</p>
+            </a>
+          </div>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <img
+              class="navbar-toggler-icon"
+              src="../assets/icons/menu-48.png"
+              alt="icono menu"
+            />
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav navbar-list">
+              <li><a class="navbar-item" href="../index.html">Inicio</a></li>
+              <li>
+                <a class="navbar-item" href="catalogo.html">Catálogo</a>
+              </li>
+              <li>
+                <a class="navbar-item" href="./marcas.html">Marcas</a>
+              </li>
+              <li>
+                <a class="navbar-item" href="./contacto.html">Contacto</a>
+              </li>
+            </ul>
+            <div id="carrito">
+              <a class="navbar-item" href="./carrito.html"
+                ><span id="contadorCarrito" class="badge text-bg-danger"></span
+                >Carrito 🛒</a
+              >
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <section>
+        <h1 class="titulo-principal animate__animated animate__slideInDown">
+          Catálogo
+        </h1>
+        <div id="catalogo-container" class="catalogo-container">
+          <!--Aca se renderizan dinamicamente los productos-->
+        </div>
+        <div id="catalogo-vacio"></div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-container">
+        <a id="contacto-footer" href="./contacto.html"
+          >Ir a Datos de contacto</a
+        >
+        <div class="socials-icon-container">
+          <a href="https://web.whatsapp.com/" target="_blank">
+            <img
+              class="socials-icon"
+              src="../assets/images/whatsapp.png"
+              alt="Logo Whatsapp"
+            />
+          </a>
+
+          <a href="https://www.facebook.com/" target="_blank">
+            <img
+              class="socials-icon"
+              src="../assets/images/facebook.png"
+              alt="Logo Facebook"
+            />
+          </a>
+
+          <a href="https://www.instagram.com/" target="_blank">
+            <img
+              class="socials-icon"
+              src="../assets/images/instagram.png"
+              alt="Logo Instagram"
+            />
+          </a>
+
+          <a href="https://twitter.com/" target="_blank">
+            <img
+              class="socials-icon"
+              src="../assets/images/xcorp.png"
+              alt="Logo X corp"
+            />
+          </a>
+        </div>
+        <p>Todos los derechos reservados - Alimentos Rocco ®</p>
+      </div>
+    </footer>
+  </body>
+</html>

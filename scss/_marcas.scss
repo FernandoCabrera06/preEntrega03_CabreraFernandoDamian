@@ -1,0 +1,73 @@
+.col-md-4 {
+  a {
+    img {
+      border: 1px solid $full_dark;
+      margin: 1.5rem 1rem;
+      border-radius: 10px;
+    }
+  }
+}
+.carousel {
+  .container {
+    .row {
+      width: 100%;
+    }
+  }
+}
+#carouselExampleAutoplaying {
+  width: 100%;
+}
+.carousel-control-next-icon {
+  width: 3.5rem;
+  height: 3.5rem;
+}
+.carousel-control-prev-icon {
+  width: 3.5rem;
+  height: 3.5rem;
+}
+@media (min-width: 992px) {
+  .container {
+    max-width: 1100px;
+  }
+  .container-lg {
+    max-width: 1100px;
+  }
+  .container-md {
+    max-width: 1100px;
+  }
+  .container-sm {
+    max-width: 1100px;
+  }
+  #carousel-mobile {
+    display: none;
+  }
+}
+@media (max-width: 991px) {
+  .carousel {
+    margin-top: 0.2rem;
+  }
+  .container {
+    max-width: 720px;
+  }
+  .container-md {
+    max-width: 720px;
+  }
+  .container-sm {
+    max-width: 720px;
+  }
+}
+@media (min-width: 768px) {
+  #carousel-mobile {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  #carousel-desktop {
+    display: none;
+  }
+  .container {
+    width: 80%;
+    display: flex;
+    align-self: center;
+  }
+}

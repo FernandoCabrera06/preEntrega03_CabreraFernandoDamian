@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="../assets/icons/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Gabarito&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <script type="text/javascript" src=""></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+    ></script>
+    <link rel="stylesheet" href="../css/style.css" />
+    <title>
+      Rocco Alimentos 🐕 | Proveemos productos de todas las marcas, consulta nuestro catálogo y no dudes en consultarnos si necesitas más información.
+    </title>
+    <meta
+      name="description"
+      content="Proveemos productos de todas las marcas, consulta nuestro catálogo y no dudes en consultarnos si necesitas más información"
+    />
+    <meta
+    name="keywords"
+    content="cambo dogui ducca especial-dog hills pedigree playfield purina-pro-plan royal sabrositos whiskas"
+  />
+  <script src="../js/pages/marcas.js" defer></script>
+  <script src="../js/models/Carrito.js" defer></script>
+  <script src="../js/carrito-navbar.js" defer></script>
+  </head>
+  <body>
+    <header class="header">
+      <nav class="navbar navbar-expand-lg border-bottom border-body">
+        <div class="container-fluid">
+          <div class="logo-sitio-container">
+            <a href="../index.html">
+              <img
+                src="../assets/images/logo.png"
+                id="logo-sitio"
+                alt="logo sitio"
+              />
+              <p>Rocco - Alimentos para mascotas</p>
+            </a>
+          </div>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <img
+              class="navbar-toggler-icon"
+              src="../assets/icons/menu-48.png"
+              alt="icono menu"
+            />
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav navbar-list">
+              <li><a class="navbar-item" href="../index.html">Inicio</a></li>
+              <li>
+                <a class="navbar-item" href="./catalogo.html">Catálogo</a>
+              </li>
+              <li>
+                <a class="navbar-item" href="#">Marcas</a>
+              </li>
+              <li>
+                <a class="navbar-item" href="./contacto.html">Contacto</a>
+              </li>
+            </ul>
+            <div id="carrito">
+              <a class="navbar-item" href="./carrito.html"
+                ><span id="contadorCarrito" class="badge text-bg-danger"></span
+                >Carrito 🛒</a
+              >
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <h1 class="titulo-principal animate__animated animate__slideInDown">Marcas</h1>
+
+      <!------------------------Carousel de 6 imagenes para desktop------------------------>
+      <section id="carousel-desktop" class="pt-5 pb-5">
+        <div class="carousel">
+          <div class="container">
+            <div class="row">
+              <div class="col-12">
+                <div
+                  id="carouselExampleIndicators2"
+                  class="carousel slide"
+                  data-ride="carousel"
+                >
+                  <div class="carousel-inner">
+                    <div class="carousel-item active">
+                      <div class="row">
+
+                        
+                        <div class="col-md-4 mb-3">
+                          <a href="./catalogo.html?brand=purina">
+                            <img
+                              class="img-fluid"
+                              src="../assets/images/marcas/purina.jpg"
+                              alt="Logo Marca Purina Pro Plan"
+                            />
+                          </a>
+
+                          <a href="./catalogo.html?brand=royal">
+                            <img
+                              class="img-fluid"
+                              src="../assets/images/marcas/royal.jpg"
+                              alt="Logo Marca Royal"
+                            />
+                          </a>
+                        </div>
+
+                        <div class="col-md-4 mb-3">
+                          <a href="./catalogo.html?brand=cambo">
+                            <img
+                              class="img-fluid"
+                              src="../assets/images/marcas/cambo.png"
+                              alt="Logo Marca Cambo"
+                            />
+                          </a>
+
+                          <a href="./catalogo.html?brand=animall">
+                            <img
+                              class="img-fluid"
+                              src="../assets/images/marcas/animall.jpg"
+                              alt="Logo Marca Animall"
+                            />
+                          </a>
+                        </div>
+
+                        <div class="col-md-4 mb-3">
+                          <a href="./catalogo.html?brand=dogui">
+                            <img
+                              class="img-fluid"
+                              src="../assets/images/marcas/dogui.jpg"
+                              alt="Logo Marca Dogui"
+                            />
+                          </a>
+
+                          <a href="./catalogo.html?brand=especial-dog">
+                            <img
+                              class="img-fluid"
+                              src="../assets/images/marcas/especial-dog.jpg"
+                              alt="Logo Especial Dog"
+                            />
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="carousel-item">
+                      <div class="row">
+                        <div class="col-md-4 mb-3">
+                          <a href="./catalogo.html?brand=whiskas">
+                            <img
+                              class="img-fluid"
+                              src="../assets/images/marcas/whiskas.jpg"
+                              alt="Logo Marca whiskas"
+                            />
+                          </a>
+
+                          <a href="./catalogo.html?brand=playfield">
+                            <img
+                              class="img-fluid"
+                              src="../assets/images/marcas/playfield.png"
+                              alt="Logo Marca Playfield"
+                            />
+                          </a>
+                        </div>
+
+                        <div class="col-md-4 mb-3">
+                          <a href="./catalogo.html?brand=ducca">
+                            <img
+                              class="img-fluid"
+                              src="../assets/images/marcas/ducca.jpg"
+                              alt="Logo Marca Ducca"
+                            />
+                          </a>
+
+                          <a href="./catalogo.html?brand=hills">
+                            <img
+                              class="img-fluid"
+                              src="../assets/images/marcas/hills.png"
+                              alt="Logo Marca Hills"
+                            />
+                          </a>
+                        </div>
+
+                        <div class="col-md-4 mb-3">
+                          <a href="./catalogo.html?brand=sabrositos">
+                            <img
+                              class="img-fluid"
+                              src="../assets/images/marcas/sabrositos.png"
+                              alt="Logo Marca Sabrositos"
+                            />
+                          </a>
+
+                          <a href="./catalogo.html?brand=pedigree">
+                            <img
+                              class="img-fluid"
+                              src="../assets/images/marcas/pedigree.jpg"
+                              alt="Logo Marca Pedigree"
+                            />
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!------------ Controles Carousel ------------------->
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#carouselExampleIndicators2"
+            data-bs-slide="prev"
+          >
+            <img
+              class="carousel-control-prev-icon"
+              aria-hidden="true"
+              src="../assets/icons/atras50.png"
+              alt="flecha atras"
+            />
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#carouselExampleIndicators2"
+            data-bs-slide="next"
+          >
+            <img
+              class="carousel-control-next-icon"
+              aria-hidden="false"
+              src="../assets/icons/adelante50.png"
+              alt="flecha adelante"
+            />
+          </button>
+          <!------------ FIN Controles Carousel ------------------->
+        </div>
+      </section>
+      <!------------------------FIN Carousel de 6 imagenes para desktop------------------------>
+
+      <!------------------------Carousel de 3 imagenes para mobile------------------------>
+      <section id="carousel-mobile" class="pt-5 pb-5">
+        <div class="carousel">
+          <div class="container">
+            <div class="row">
+              <div class="col-12">
+                <div
+                  id="carouselExampleIndicators3"
+                  class="carousel slide"
+                  data-ride="carousel"
+                >
+                  <div class="carousel-inner">
+                    <div class="carousel-item active">
+                      <div class="row">
+                        <div class="col-md-4 mb-3">
+                          <a href="./catalogo.html?brand=purina">
+                            <img
+                              class="img-fluid"
+                              src="../assets/images/marcas/purina.jpg"
+                              alt="Logo Marca Purina Pro Plan"
+                            />
+                          </a>
+
+                          <a href="./catalogo.html?brand=royal">
+                            <img
+                              class="img-fluid"
+                              src="../assets/images/marcas/royal.jpg"
+                              alt="Logo Marca Royal"
+                            />
+                          </a>
+                          <a href="./catalogo.html?brand=cambo">
+                            <img
+                              class="img-fluid"
+                              src="../assets/images/marcas/cambo.png"
+                              alt="Logo Marca Cambo"
+                            />
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="carousel-item">
+                      <div class="row">
+                        <div class="col-md-4 mb-3">
+                          <a href="./catalogo.html?brand=animall">
+                            <img
+                              class="img-fluid"
+                              src="../assets/images/marcas/animall.jpg"
+                              alt="Logo Marca Animall"
+                            />
+                          </a>
+
+                          <a href="./catalogo.html?brand=dogui">
+                            <img
+                              class="img-fluid"
+                              src="../assets/images/marcas/dogui.jpg"
+                              alt="Logo Marca Dogui"
+                            />
+                          </a>
+
+                          <a href="./catalogo.html?brand=especial-dog">
+                            <img
+                              class="img-fluid"
+                              src="../assets/images/marcas/especial-dog.jpg"
+                              alt="Logo Especial Dog"
+                            />
+                          </a>
+                        </div>
+
+                  </div>
+                </div>
+
+                <div class="carousel-item">
+                  <div class="row">
+                    <div class="col-md-4 mb-3">
+                      <a href="./catalogo.html?brand=whiskas">
+                        <img
+                          class="img-fluid"
+                          src="../assets/images/marcas/whiskas.jpg"
+                          alt="Logo Marca whiskas"
+                        />
+                      </a>
+
+                      <a href="./catalogo.html?brand=playfield">
+                        <img
+                          class="img-fluid"
+                          src="../assets/images/marcas/playfield.png"
+                          alt="Logo Marca Playfield"
+                        />
+                      </a>
+                      <a href="./catalogo.html?brand=ducca">
+                        <img
+                          class="img-fluid"
+                          src="../assets/images/marcas/ducca.jpg"
+                          alt="Logo Marca Ducca"
+                        />
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="carousel-item">
+                  <div class="row">
+                     <div class="col-md-4 mb-3">
+                      <a href="./catalogo.html?brand=hills">
+                        <img
+                          class="img-fluid"
+                          src="../assets/images/marcas/hills.png"
+                          alt="Logo Marca Hills"
+                        />
+                      </a>
+
+                      <a href="./catalogo.html?brand=sabrositos">
+                        <img
+                          class="img-fluid"
+                          src="../assets/images/marcas/sabrositos.png"
+                          alt="Logo Marca Sabrositos"
+                        />
+                      </a>
+
+                      <a href="./catalogo.html?brand=pedigree">
+                        <img
+                          class="img-fluid"
+                          src="../assets/images/marcas/pedigree.jpg"
+                          alt="Logo Marca Pedigree"
+                        />
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!------------ Controles Carousel ------------------->
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#carouselExampleIndicators3"
+            data-bs-slide="prev"
+          >
+            <img
+              class="carousel-control-prev-icon"
+              aria-hidden="true"
+              src="../assets/icons/atras50.png"
+              alt="flecha atras"
+            />
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#carouselExampleIndicators3"
+            data-bs-slide="next"
+          >
+            <img
+              class="carousel-control-next-icon"
+              aria-hidden="false"
+              src="../assets/icons/adelante50.png"
+              alt="flecha adelante"
+            />
+          </button>
+          <!------------ FIN Controles Carousel ------------------->
+        </div>
+      </section>
+      <!------------------------FIN Carousel de 3 imagenes para mobile------------------------>
+    </main>
+
+    <footer>
+      <div class="footer-container">
+        <a id="contacto-footer" href="./contacto.html"
+          >Ir a Datos de contacto</a
+        >
+        <div class="socials-icon-container">
+          <a href="https://web.whatsapp.com/" target="_blank">
+            <img
+              class="socials-icon"
+              src="../assets/images/whatsapp.png"
+              alt="Logo Whatsapp"
+            />
+          </a>
+
+          <a href="https://www.facebook.com/" target="_blank">
+            <img
+              class="socials-icon"
+              src="../assets/images/facebook.png"
+              alt="Logo Facebook"
+            />
+          </a>
+
+          <a href="https://www.instagram.com/" target="_blank">
+            <img
+              class="socials-icon"
+              src="../assets/images/instagram.png"
+              alt="Logo Instagram"
+            />
+          </a>
+
+          <a href="https://twitter.com/" target="_blank">
+            <img
+              class="socials-icon"
+              src="../assets/images/xcorp.png"
+              alt="Logo X corp"
+            />
+          </a>
+        </div>
+        <p>Todos los derechos reservados - Alimentos Rocco ®</p>
+      </div>
+    </footer>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

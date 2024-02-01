@@ -1,0 +1,68 @@
+.navbar {
+  width: 100%;
+  height: 10rem;
+  background-color: $fondo_navbar;
+  position: fixed;
+  top: 0;
+  z-index: 2;
+}
+
+.logo-sitio-container {
+  font-size: 1.15rem;
+  margin: 1rem 15rem 0 2rem;
+  text-align: center;
+  font-family: $navbar_logo;
+}
+
+.logo-sitio-container a {
+  text-decoration: none;
+  color: $full_dark;
+}
+
+#logo-sitio {
+  width: 50px;
+}
+
+.navbar-list li,
+div {
+  font-size: 25px;
+  font-family: $navbar_logo;
+}
+
+.navbar-item {
+  color: $item_navbar;
+  text-decoration: none;
+  text-transform: uppercase;
+  border-radius: 30px;
+}
+
+.navbar-item:hover {
+  color: $item_hover;
+  font-size: 26px;
+}
+
+.collapse ul {
+  width: 34rem;
+  justify-content: space-between;
+}
+
+#carrito {
+  margin-left: 1rem;
+  width: 11rem;
+  justify-self: end;
+  margin-top: -1.5rem;
+}
+#contadorCarrito {
+  font-size: 0.85rem;
+  display: flex;
+  justify-content: center;
+  width: 1.1rem;
+  margin-left: 7.5rem;
+}
+
+@media (max-width: 768px) {
+  .logo-sitio-container {
+    width: 40%;
+    margin: 1.5rem 0 0 1rem;
+  }
+}
