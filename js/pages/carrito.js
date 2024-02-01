@@ -9,10 +9,6 @@ let totalDescuentos = 0;
 let totalImpuestos = 0;
 let total = 0;
 
-function swalSuccess() {
-  swal("Agregado al carrito!", "", "success");
-}
-
 /* ------- renderiza las card de productos sugeridos ------- */
 const renderListProducts = (list) => {
   if (list.length > 0) {
@@ -29,7 +25,7 @@ const renderListProducts = (list) => {
             <div>
               <a id="${
                 product.id
-              }" class="btn-agregar-al-carrito" onclick="swalSuccess()" type="button">Agregar al carrito</a>
+              }" class="btn-agregar-al-carrito" type="button">Agregar al carrito</a>
             </div>
           </div>`;
     });
@@ -45,16 +41,18 @@ const renderListProducts = (list) => {
 };
 
 const agregarAlCarrito = (e) => {
-  console.log(e);
-  const id = e.target.id;
-  const product = products.find((item) => item.id == id);
+  swalCarrito();
+  setTimeout(() => {
+    const id = e.target.id;
+    const product = products.find((item) => item.id == id);
 
-  carrito.agregarAlCarrito(product);
+    carrito.agregarAlCarrito(product);
 
-  contadorCarrito.innerText = carrito.contarUnidades();
-  carrito.contarUnidades() == 1 && location.reload();
-  calcularMontos();
-  renderizarItemsCarrito();
+    contadorCarrito.innerText = carrito.contarUnidades();
+    carrito.contarUnidades() == 1 && location.reload();
+    calcularMontos();
+    renderizarItemsCarrito();
+  }, 1400);
 };
 
 const quitarAlCarrito = (e) => {

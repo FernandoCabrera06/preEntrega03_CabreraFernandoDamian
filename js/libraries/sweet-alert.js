@@ -1,5 +1,8 @@
 const swalCarrito = () => {
   swal("Agregado al carrito!", "", "success");
+  setTimeout(() => {
+    swal.close();
+  }, 2000);
 };
 
 const swalEmail = () => {

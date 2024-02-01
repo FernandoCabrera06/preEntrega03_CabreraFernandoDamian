@@ -20,7 +20,7 @@ const renderListProducts = (list) => {
             <div>
               <a id="${
                 product.id
-              }" class="btn-agregar-al-carrito" onclick="swalCarrito()" type="button">Agregar al carrito</a>
+              }" class="btn-agregar-al-carrito" type="button">Agregar al carrito</a>
             </div>
           </div>`;
     });
@@ -36,12 +36,14 @@ const renderListProducts = (list) => {
 };
 
 const agregarAlCarrito = (e) => {
-  const id = e.target.id;
-  const product = products.find((item) => item.id == id);
-
-  carrito.agregarAlCarrito(product);
-  contadorCarrito.innerText = carrito.contarUnidades();
-  carrito.contarUnidades() == 1 && location.reload();
+  swalCarrito();
+  setTimeout(() => {
+    const id = e.target.id;
+    const product = products.find((item) => item.id == id);
+    carrito.agregarAlCarrito(product);
+    contadorCarrito.innerText = carrito.contarUnidades();
+    carrito.contarUnidades() == 1 && location.reload();
+  }, 1400);
 };
 
 if (brand) {
