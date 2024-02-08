@@ -4,6 +4,14 @@ const params = new URLSearchParams(location.search);
 const brand = params.get("brand");
 const category = params.get("category");
 const ENDPOINT_DATA = "../js/data.json";
+const spinner = document.querySelector("#spinner");
+
+const mostrarSpinner = () => {
+  spinner.classList.add("lds-facebook");
+};
+const ocultarSpinner = () => {
+  spinner.classList.remove("lds-facebook");
+};
 
 /* ------- recibe los datos y renderiza ------- */
 const renderListProducts = (list) => {
@@ -59,25 +67,28 @@ const agregarAlCarrito = async (e) => {
 };
 
 const getAllProductsByTag = async (brand, category) => {
+  mostrarSpinner();
   try {
     const response = await fetch(ENDPOINT_DATA);
     const json = await response.json();
-
-    !!brand // renderiza por marca de la pagina marcas
-      ? renderListProducts(
-          json.products.filter((item) =>
-            item.brand.toLocaleLowerCase().includes(brand.toLocaleLowerCase())
+    setTimeout(() => {
+      ocultarSpinner();
+      !!brand // renderiza por marca de la pagina marcas
+        ? renderListProducts(
+            json.products.filter((item) =>
+              item.brand.toLocaleLowerCase().includes(brand.toLocaleLowerCase())
+            )
           )
-        )
-      : !!category // renderiza por categoria de la pagina inicio
-      ? renderListProducts(
-          json.products.filter((item) =>
-            item.category
-              .toLocaleLowerCase()
-              .includes(category.toLocaleLowerCase())
+        : !!category // renderiza por categoria de la pagina inicio
+        ? renderListProducts(
+            json.products.filter((item) =>
+              item.category
+                .toLocaleLowerCase()
+                .includes(category.toLocaleLowerCase())
+            )
           )
-        )
-      : renderListProducts(json.products); // renderiza todos del catalogo
+        : renderListProducts(json.products); // renderiza todos del catalogo
+    }, 1100);
   } catch (error) {
     swal(
       "Oops! no pudimos cargar los productos, Intente mas tarde!",
