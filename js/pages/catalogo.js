@@ -3,6 +3,7 @@ const catalogoVacio = document.querySelector("#catalogo-vacio");
 const params = new URLSearchParams(location.search);
 const brand = params.get("brand");
 const category = params.get("category");
+const ENDPOINT_DATA = "../js/data.json";
 
 /* ------- recibe los datos y renderiza ------- */
 const renderListProducts = (list) => {
@@ -35,29 +36,55 @@ const renderListProducts = (list) => {
   }
 };
 
-const agregarAlCarrito = (e) => {
-  swalCarrito();
-  setTimeout(() => {
-    const id = e.target.id;
-    const product = products.find((item) => item.id == id);
-    carrito.agregarAlCarrito(product);
-    contadorCarrito.innerText = carrito.contarUnidades();
-    carrito.contarUnidades() == 1 && location.reload();
-  }, 1400);
+const agregarAlCarrito = async (e) => {
+  try {
+    const response = await fetch(ENDPOINT_DATA);
+    const json = await response.json();
+
+    swalCarrito();
+    setTimeout(() => {
+      const id = e.target.id;
+      const product = json.products.find((item) => item.id == id);
+      carrito.agregarAlCarrito(product);
+      contadorCarrito.innerText = carrito.contarUnidades();
+      carrito.contarUnidades() == 1 && location.reload();
+    }, 1400);
+  } catch (error) {
+    swal(
+      "Oops! no pudimos agregar este producto, Intente mas tarde",
+      "",
+      "error"
+    );
+  }
 };
 
-if (brand) {
-  const productos = products.filter((item) =>
-    item.brand.toLocaleLowerCase().includes(brand.toLocaleLowerCase())
-  );
-  renderListProducts(productos);
-}
+const getAllProductsByTag = async (brand, category) => {
+  try {
+    const response = await fetch(ENDPOINT_DATA);
+    const json = await response.json();
 
-if (category) {
-  const productos = products.filter(
-    (item) => item.category.toLocaleLowerCase() === category.toLocaleLowerCase()
-  );
-  renderListProducts(productos);
-}
+    !!brand // renderiza por marca de la pagina marcas
+      ? renderListProducts(
+          json.products.filter((item) =>
+            item.brand.toLocaleLowerCase().includes(brand.toLocaleLowerCase())
+          )
+        )
+      : !!category // renderiza por categoria de la pagina inicio
+      ? renderListProducts(
+          json.products.filter((item) =>
+            item.category
+              .toLocaleLowerCase()
+              .includes(category.toLocaleLowerCase())
+          )
+        )
+      : renderListProducts(json.products); // renderiza todos del catalogo
+  } catch (error) {
+    swal(
+      "Oops! no pudimos cargar los productos, Intente mas tarde!",
+      "",
+      "error"
+    );
+  }
+};
 
-if (!brand && !category) renderListProducts(products);
+getAllProductsByTag(brand, category);

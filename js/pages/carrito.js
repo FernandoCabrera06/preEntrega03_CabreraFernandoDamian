@@ -3,12 +3,26 @@ const listaProductosSugeridos = document.querySelector(
 );
 const itemsCarrito = document.querySelector("#tabla-items-carrito");
 const btnVaciarCarrito = document.querySelector("#btn-vaciar-carrito");
+const ENDPOINT_DATA = "../js/data.json";
 
 let subtotal = 0;
 let totalDescuentos = 0;
 let totalImpuestos = 0;
 let total = 0;
 
+const getAllProductsByTagSuggested = async () => {
+  try {
+    const response = await fetch(ENDPOINT_DATA);
+    const json = await response.json();
+    renderListProducts(json.products.filter((item) => item.suggested));
+  } catch (error) {
+    swal(
+      "Oops! no pudimos cargar los productos, Intente mas tarde!",
+      "",
+      "error"
+    );
+  }
+};
 /* ------- renderiza las card de productos sugeridos ------- */
 const renderListProducts = (list) => {
   if (list.length > 0) {
@@ -40,35 +54,52 @@ const renderListProducts = (list) => {
   }
 };
 
-const agregarAlCarrito = (e) => {
-  swalCarrito();
-  setTimeout(() => {
+const agregarAlCarrito = async (e) => {
+  try {
+    const response = await fetch(ENDPOINT_DATA);
+    const json = await response.json();
+
+    swalCarrito();
+    setTimeout(() => {
+      const id = e.target.id;
+      const product = json.products.find((item) => item.id == id);
+      carrito.agregarAlCarrito(product);
+      contadorCarrito.innerText = carrito.contarUnidades();
+      carrito.contarUnidades() == 1 && location.reload();
+      calcularMontos();
+      renderizarItemsCarrito();
+    }, 1400);
+  } catch (error) {
+    swal(
+      "Oops! no pudimos agregar este producto, Intente mas tarde",
+      "",
+      "error"
+    );
+  }
+};
+
+const quitarAlCarrito = async (e) => {
+  try {
+    const response = await fetch(ENDPOINT_DATA);
+    const json = await response.json();
+
     const id = e.target.id;
-    const product = products.find((item) => item.id == id);
-
-    carrito.agregarAlCarrito(product);
-
+    const product = json.products.find((item) => item.id == id);
+    carrito.quitarAlCarrito(product);
     contadorCarrito.innerText = carrito.contarUnidades();
-    carrito.contarUnidades() == 1 && location.reload();
+    carrito.contarUnidades() == 0 && location.reload();
     calcularMontos();
     renderizarItemsCarrito();
-  }, 1400);
+  } catch (error) {
+    swal(
+      "Oops! no pudimos quitar este producto, Intente mas tarde",
+      "",
+      "error"
+    );
+  }
 };
 
-const quitarAlCarrito = (e) => {
-  console.log(e);
-  const id = e.target.id;
-  const product = products.find((item) => item.id == id);
-
-  carrito.quitarAlCarrito(product);
-
-  contadorCarrito.innerText = carrito.contarUnidades();
-  carrito.contarUnidades() == 0 && location.reload();
-  calcularMontos();
-  renderizarItemsCarrito();
-};
-
-renderListProducts(products.filter((item) => item.suggested));
+getAllProductsByTagSuggested();
 
 btnVaciarCarrito.addEventListener("click", carrito.vaciarCarrito);
 

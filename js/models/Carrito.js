@@ -22,7 +22,7 @@ class Carrito {
     localStorage.setItem("carrito", JSON.stringify(this.carrito));
   }
 
-  quitarAlCarrito({ id, img, description, price }) {
+  quitarAlCarrito({ id }) {
     // Busco si existe el producto
     const index = this.carrito.findIndex((product) => product.id == id);
     if (index != -1) {
