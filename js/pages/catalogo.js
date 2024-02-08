@@ -48,7 +48,6 @@ const agregarAlCarrito = async (e) => {
   try {
     const response = await fetch(ENDPOINT_DATA);
     const json = await response.json();
-
     swalCarrito();
     setTimeout(() => {
       const id = e.target.id;

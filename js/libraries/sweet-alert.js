@@ -10,5 +10,8 @@ const swalEmail = () => {
 };
 
 const swalCompra = () => {
+  setTimeout(() => {
+    carrito.vaciarCarrito();
+  }, 1500);
   swal("Compra realizada!", "", "info");
 };

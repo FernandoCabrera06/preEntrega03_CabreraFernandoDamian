@@ -4,7 +4,6 @@ const listaProductosSugeridos = document.querySelector(
 const itemsCarrito = document.querySelector("#tabla-items-carrito");
 const btnVaciarCarrito = document.querySelector("#btn-vaciar-carrito");
 const ENDPOINT_DATA = "../js/data.json";
-
 let subtotal = 0;
 let totalDescuentos = 0;
 let totalImpuestos = 0;
@@ -149,16 +148,14 @@ renderizarItemsCarrito();
 
 const resumenCarrito = document.querySelector(".cuenta-total");
 
-const puedoComprar = () => {
-  total <= 0;
-};
-
 const calcularMontos = () => {
   subtotal = carrito.sumatoriaTotalCarrito();
   totalImpuestos = carrito.calcularIVA(subtotal);
   totalDescuentos = carrito.calcularDescuentos();
   total = subtotal + totalImpuestos - totalDescuentos;
-
+  const puedoComprar = () => {
+    total <= 0;
+  };
   resumenCarrito.innerHTML = `<h1>Resumen del pedido</h1>
 <p>Subtotal:...................$${subtotal.toFixed(2)}</p>
 <p>Descuentos:...................$${totalDescuentos.toFixed(2)}</p>

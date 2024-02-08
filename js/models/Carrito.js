@@ -71,7 +71,7 @@ class Carrito {
     }, 0);
   }
 
-  vaciarCarrito({ id, description, price }) {
+  vaciarCarrito() {
     this.carrito = [];
     localStorage.setItem("carrito", JSON.stringify(this.carrito));
     location.reload();
